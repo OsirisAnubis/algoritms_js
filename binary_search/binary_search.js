@@ -1,24 +1,23 @@
 'use strict';
 
 const binarySearch = (array, element) => {
-  let i = 0;
-  let j = array.length - 1;
-  let mid = Math.floor((i + j) / 2);
-  while (i !== j) {
+  let low = 0;
+  let high = array.length - 1;
+  let mid;
+  while (low <= high) {
+    mid = Math.floor((low + high) / 2);
     if (array[mid] > element) {
-      j = mid - 1;
-      mid = Math.floor((i + j) / 2);
+      high = mid - 1;
     }
     else if (array[mid] < element) {
-      i = mid + 1;
-      mid = Math.floor((i + j) / 2);
+      low = mid + 1;
     }
-    else {//array[mid] === element
+    //array[mid] === element
+    else {
       return true;
     }
   }
-  if (array[mid] === element) return true;
-  else return false;
+  return false;
 };
 
 //Example
