@@ -13,7 +13,7 @@ const binarySearch = (array, element) => {
       i = mid + 1;
       mid = Math.floor((i + j) / 2);
     }
-    else {
+    else {//array[mid] === element
       return true;
     }
   }
