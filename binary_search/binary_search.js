@@ -14,10 +14,10 @@ const binarySearch = (array, element) => {
     }
     //array[mid] === element
     else {
-      return true;
+      return mid;
     }
   }
-  return false;
+  return -1;
 };
 
 //Example
